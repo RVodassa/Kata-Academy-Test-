@@ -1,11 +1,7 @@
 package main
 
-import (
-	"fmt"
-)
-
-massage := "hello world"
+import "fmt"
 
 func main() {
-	fmt.Println(massage)
+	fmt.Println("Hello, World!")
 }
