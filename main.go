@@ -1,7 +1,7 @@
 package main
 
 import (
-	"Kata-Academy-Test-/convert"
+	"Kata-Academy-Test/convert"
 	"fmt"
 )
 
