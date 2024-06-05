@@ -1,22 +1,19 @@
 package convert
 
-// RomanToArabic converts a Roman numeral to an Arabic number.
-func RomanToArabic(ro string) int {
+// Функция перевода римского числа в арабское
+func RomanToArabic(roman string) int {
+
 	romanMap := map[rune]int{
 		'I': 1,
 		'V': 5,
 		'X': 10,
-		'L': 50,
-		'C': 100,
-		'D': 500,
-		'M': 1000,
 	}
 
 	total := 0
 	prev := 0
 
-	for _, char := range ro {
-		value := romanMap[char]
+	for _, entry := range roman {
+		value := romanMap[entry]
 		if value > prev {
 			total += value - 2*prev
 		} else {

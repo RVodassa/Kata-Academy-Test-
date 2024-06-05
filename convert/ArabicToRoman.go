@@ -1,6 +1,6 @@
 package convert
 
-// ArabicToRoman converts an Arabic number to a Roman numeral.
+// Функция перевода арабского числа в римское
 func ArabicToRoman(ar int) string {
 	result := ""
 
@@ -8,11 +8,6 @@ func ArabicToRoman(ar int) string {
 		Arabic int
 		Roman  string
 	}{
-		{1000, "M"},
-		{900, "CM"},
-		{500, "D"},
-		{400, "CD"},
-		{100, "C"},
 		{90, "XC"},
 		{50, "L"},
 		{40, "XL"},
