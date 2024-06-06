@@ -19,6 +19,23 @@ func main() {
 	fmt.Println(calcResult)
 }
 
+/*
+Эта функция отвечает за проверку токенов римских чисел,
+чтобы не допустить ввода неверного формата римского числа,
+например "IIII" или "VV".
+Так как по условия задачи на вход доступны только числа от 1 до 10,
+можно обойтись циклом, который сравнивает список допустимых чисел
+с входными данными.
+*/
+func contains(slice []string, item string) bool {
+	for _, str := range slice {
+		if str == item {
+			return true
+		}
+	}
+	return false
+}
+
 func PrimaryProcessing(primerStr string) string {
 	// Удаляем пробелы и переводим в верхний регистр
 	primerStr = strings.ToUpper(strings.TrimSpace(primerStr))
@@ -39,18 +56,32 @@ func PrimaryProcessing(primerStr string) string {
 	operator := strings.TrimSpace(signs[0])
 
 	var x1, x2 int
+	var err1, err2 error
 
 	// Проверка формата и преобразование
-	x1, err1 := strconv.Atoi(num1)
-	x2, err2 := strconv.Atoi(num2)
+	x1, err1 = strconv.Atoi(num1)
+	x2, err2 = strconv.Atoi(num2)
+
+	// Допустимые римские числа (все числа, которые можно составить из "I", "V" и "X")
+	validRomanNumerals := []string{"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI",
+		"XVII", "XVIII", "XIX", "XX", "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII", "XXIX", "XXX"}
 
 	isRoman := false
 
 	if err1 != nil || err2 != nil {
 		// Если хотя бы одна из ошибок не nil, значит числа могут быть римскими
-		x1 = convert.RomanToArabic(num1)
-		x2 = convert.RomanToArabic(num2)
-		isRoman = true
+		if err1 != nil && err2 != nil {
+			// Проверяем, являются ли оба числа допустимыми римскими числами
+			if contains(validRomanNumerals, num1) && contains(validRomanNumerals, num2) {
+				x1 = convert.RomanToArabic(num1)
+				x2 = convert.RomanToArabic(num2)
+				isRoman = true
+			} else {
+				panic("Выдача паники, так как используются неверные римские числа.")
+			}
+		} else {
+			panic("Выдача паники, так как используются одновременно разные системы счисления")
+		}
 	}
 
 	if err1 == nil && err2 == nil {
