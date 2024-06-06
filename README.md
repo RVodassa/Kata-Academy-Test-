@@ -3,9 +3,9 @@
 </p>
 
 <p align="center">
-   <img src="" alt="[Unity Version](https://img.shields.io/badge/Last%20version-v1.0-brightgreen
+   <img src="" alt="https://img.shields.io/badge/Last%20version-v1.0-brightgreen"
 )">
-   <img src="" alt="[Game Version](https://img.shields.io/badge/Language-Golang-blue
+   <img src="" alt="https://img.shields.io/badge/Language-Golang-blue"
 )">
 </p>
 
