@@ -4,10 +4,7 @@
 
 <p align="center">
    <img alt="Static Badge" src="https://img.shields.io/badge/Last%20version-1.0-brightgreen">
-)">
    <img alt="Static Badge" src="https://img.shields.io/badge/Language-Golang-blue">
-
-)">
 </p>
 
 ## About
