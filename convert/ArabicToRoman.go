@@ -7,7 +7,7 @@ func ArabicToRoman(ar int) string {
 	var romanMap = []struct {
 		Arabic int
 		Roman  string
-	}{
+	}{{100, "c"},
 		{90, "XC"},
 		{50, "L"},
 		{40, "XL"},
