@@ -1,6 +1,5 @@
 package convert
 
-// Функция перевода римского числа в арабское
 func RomanToArabic(roman string) int {
 
 	romanMap := map[rune]int{

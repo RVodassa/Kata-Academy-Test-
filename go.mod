@@ -1,3 +1,3 @@
-module Kata-Academy-Test
+module calculator
 
 go 1.22.3
