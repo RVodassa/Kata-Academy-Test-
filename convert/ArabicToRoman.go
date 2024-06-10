@@ -1,6 +1,7 @@
 package convert
 
-func ArabicToRoman(arabic int) string {
+func ArabicToRoman(ar int) string {
+
 	ArabicMap := []struct {
 		Roman  string
 		Arabic int
@@ -19,9 +20,9 @@ func ArabicToRoman(arabic int) string {
 	result := ""
 
 	for _, entry := range ArabicMap {
-		for arabic >= entry.Arabic {
+		for ar >= entry.Arabic {
 			result += entry.Roman
-			arabic -= entry.Arabic
+			ar -= entry.Arabic
 		}
 	}
 
